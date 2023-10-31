@@ -1,0 +1,6 @@
+#Ignore these files
+######################
+#*.csv
+
+#### Jupyter checkpoints ######33
+*.ipynb_checkpoints
