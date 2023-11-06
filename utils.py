@@ -9,6 +9,7 @@ import geopy.distance
 # Distance in miles.Default value = 50 miles 
 # Returns demand in Megawatthours
 def get_demand_within_distance(latitude,longitude,demand_within_distance=50):
+    data_california = pd.read_csv('demand_data_california_with_lat_lon.csv')
     coords_1 = (latitude,longitude)
     demand = 0.
     for ind, row in data_california.iterrows():
