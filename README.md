@@ -1,9 +1,17 @@
-# Welcome to RaPower!
+# RaPower: Solar Power Plant Location Predictor
 
+This is a Machine Learning model that predicts ideal locations to install solar power plant in the state of California. This project is our submission for the 2023 Erdös Institute Data Science Bootcamp Final Project. 
 
+AUTHORS: 
 
-About:
+### Table of Contents
 
-Erdos Project to predict where solar farms can be built.
+## Data Gathering and Pre-Processing 
 
-Resources
+## Initial Visualizations
+
+## Modelling Overview
+
+## Results
+
+## Conclusions 
