@@ -54,11 +54,19 @@ def get_city_data():
     file_name = 'cities_data/simplemaps_uscities_basicv1.76/uscities.csv'
     city_data = pd.read_csv(file_name)
     required_cols = ['city','state_id','state_name','county_name','lat','lng','population','density']
-    city_data_filtered = city_data.filter(required_cols,axis=1)
+    city_data = city_data.filter(required_cols,axis=1)
     with open(final_file,'wb') as f:
-        pickle.dump(city_data_filtered,f)
-    return city_data_filtered
+        pickle.dump(city_data,f)
+    return city_data
 
+
+def get_filtered_city_data(state=None,population_threshold=None):
+    city_data = get_city_data()
+    if state is not None:
+        cities = (city_data[city_data['state_name']==state].reset_index(drop=True)).copy(deep=True)
+    if population_threshold is not None:
+        cities = cities.loc[cities['population']>population_threshold]
+    return cities
 
 
 
@@ -115,7 +123,7 @@ def state_grid(state_name,resolution):
 
 
 
-def distance_from_cities(cities,lat,lng):
+def distance_from_cities(lat,lng,cities=None,state=None,population_threshold=None):
     """Generate driving distance of a point from major cities in a state
 
     Args:
@@ -138,6 +146,9 @@ def distance_from_cities(cities,lat,lng):
     #     radii = 100000000 # some random value which is not possible in physical scenario
     # lat_radii = radii/(111/1.6) # in miles
     # lng_radii = abs(radii/(111*np.cos(lat)/1.6)) #in miles
+
+    if cities is None:
+        cities = get_filtered_city_data(state,population_threshold)
     
     city_locs = cities[['lng','lat']].values
     city_names = cities['city'].values
