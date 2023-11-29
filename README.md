@@ -1,8 +1,8 @@
 # RaPower: Solar Power Plant Location Classifier
 
-This is a Machine Learning model that predicts ideal locations to install utility-scale solar power plant in the state of California. This project is our submission for the 2023 Erdös Institute Data Science Bootcamp Final Project. 
+This is a Machine Learning model that classifies ideal locations to install utility-scale solar power plant in the state of California. This project is our submission for the 2023 Erdös Institute Data Science Bootcamp Final Project. 
 
-AUTHORS: 
+AUTHORS: Utkarsh Agrawal, Mansi Bezbaruah, Harsha Hampapura, Akshay Khadse, Meysam Motaharfar
 
 ### Table of Contents
 
@@ -12,6 +12,6 @@ AUTHORS:
 
 ## Modelling Overview
 
-## Results
+## Results and Conclusions 
 
-## Conclusions 
+## Future Work
