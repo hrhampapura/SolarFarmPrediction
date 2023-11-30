@@ -21,6 +21,7 @@ environmental degradation. As a renewable and inexhaustible resource, solar ener
 a sustainable alternative to finite fossil fuels. With advances in technology, more 
 governements and utility providers have started investing in solar farms. As such, 
 it becomes imperative to optimize the site selection of utility-scale solar farms.
+Here, utility scale means all farms that produce over 1Mw of power.
 
 ### Project Description
 This project is an innovative solution designed to streamline the site selection process 
@@ -38,6 +39,7 @@ stakeholders.
 ## Data Gathering and Preprocessing
 
 ## Initial Visualizations
+![image](https://github.com/harshahampapura/SolarFarmPrediction/assets/26388471/f8c476ff-7de3-4111-aaec-c8e087bb6018)
 ![image](https://github.com/harshahampapura/SolarFarmPrediction/assets/26388471/d0e44bc6-98b1-4157-93d9-2c684fce6865)
 
 
