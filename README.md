@@ -39,7 +39,8 @@ stakeholders.
 ## Data Gathering and Preprocessing
 
 ## Initial Visualizations
-![image](https://github.com/harshahampapura/SolarFarmPrediction/assets/26388471/f8c476ff-7de3-4111-aaec-c8e087bb6018)
+![image](https://github.com/harshahampapura/SolarFarmPrediction/assets/26388471/63b29968-02b5-49f2-b321-9e83b60db2a1)
+
 ![image](https://github.com/harshahampapura/SolarFarmPrediction/assets/26388471/d0e44bc6-98b1-4157-93d9-2c684fce6865)
 
 
