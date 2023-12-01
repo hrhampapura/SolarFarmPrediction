@@ -14,13 +14,6 @@ AUTHORS: Utkarsh Agrawal, Mansi Bezbaruah, Harsha Hampapura, Akshay Khadse, Meys
 5. [Results and Conclusion](#results-and-conclusion)
 
 ## Project Overview
-Solar power is crucial in addressing the escalating global energy crisis and mitigating 
-environmental degradation. As a renewable and inexhaustible resource, solar energy offers 
-a sustainable alternative to finite fossil fuels. With advances in technology, more 
-governements and utility providers have started investing in solar farms. As such, 
-it becomes imperative to optimize the site selection of utility-scale solar farms.
-Here, utility scale means all farms that produce over 1Mw of power.
-
 This project is an innovative solution designed to streamline the site selection process 
 for utility-scale solar energy farms. Leveraging geospatial data analytics and machine 
 learning algorithms, our predictive models assess various factors, including: solar 
@@ -34,45 +27,57 @@ stakeholders.
 How efficiently does the model predict suitable locations compared to actual installations?
 
 ## Data Gathering and Preprocessing
-
-
-<b> Parameters and Collection: </b>
-
-We obtained the data for existing utility-scale solar farms using the Large-Scale Solar 
-Photovoltaic Database provided on the United States Geological Survey website.  We then 
-focused on the data in California. As indicators of a good location for building a 
-utility-scale solar farm we decided on 5 main features namely - solar output, 
-land cover data, elevation, slope and distance to a nearest city. The solar output 
-tells us about the theoretical maximum amount of solar energy that we can harness 
-at this particular location. The elevation and slope are indicators of how difficult 
-or easy it would be to build a solar farm. The land cover informs us about potential 
-land use restrictions at this place, example, open water, or dense forest. 
-And finally the distance to the nearest city serves as a proxy for electricity demand, 
-labor and transportation cost in building the solar farm. 
-
-<b> Data Sources: </b>
-
-1. NREL: https://developer.nrel.gov/docs/solar/nsrdb/python-examples/
-2. USGS Land Use, Topography and Geological Factors Data Sets
-3. Approximate AC Output: https://solargis.com/docs/getting-started/why-solargis
-4. Google Earth Project SunRoof: https://sunroof.withgoogle.com
-5. Open Source Routing Machine: http://project-osrm.org/
-6. Harmonised global dataset of solar farms: https://www.nature.com/articles/s41597-020-0469-8
+Our data consists of 5 features, namely- solar output, land cover data, elevation, slope 
+and distance to a nearest city. The solar output tells us about the theoretical maximum 
+amount of solar energy that we can harness at this particular location. The elevation 
+and slope are indicators of how difficult or easy it would be to build a solar farm. The 
+land cover informs us about potential land use restrictions at this place, example, 
+open water, or dense forest. Finally, the distance to the nearest city serves as a proxy 
+for electricity demand,mlabor and transportation cost in building the solar farm. 
 
 <b> Cleaning: </b>
 
 To train our classifier model, we also need the formation of places where solar farms cannot 
-exist. To do this we set thresholds for each feature such that beyond this threshold values, 
+exist. To this extent, we set thresholds for each feature such that beyond this threshold values, 
 it would not be practical to build a utility-scale solar farm. This helped us identify various 
-location across California that would serve as examples where solar farms cannot exist.
+location across California that would serve as examples where solar farms cannot exist. We also
+collected a data on a feature called "ac_ouput", which is the theoretical maximum amount of 
+solar energy that we can harness at a particular location. 
+
+Our Data Collection and Cleaning code is present in the [data_code](data_code) folder. Moreover,
+all data along with API calls are present in [data](data).
 
 ## Modelling Overview
 Once we had our data cleaned and preprocessed, we plotted density functions for all our features 
-and then plotted the features against the AC output variable. We observed that the features are 
-not gaussian and don’t show a clear linear or binomial correlation. This helped us eliminate 
-certain models like Naive Bayes and Linear Regression. Moreover, we searched for models that 
-are suitable for a classification task. We chose Logistic Regression, Decision Trees, 
-Support Vector Machines, XGBoost Classifiers, and Deep Learning with classification layers.
+and then plotted the features against the ac_output variable. We observed that the features are 
+not Gaussian and don’t show a clear linear or binomial correlation. This helped us eliminate 
+certain models. We searched for models that are suitable for a classification task. 
+We chose <b> Logistic Regression, Decision Trees, Support Vector Machines, XGBoost Classifiers, and 
+Deep Learning with classification layers </b>.
+
+Modelling code, detailed metrics, and confusion matrices are present in [ml_code](ml_code).
 
 ## Results and Conclusion 
+As stated above, our goal was to create a model that can classify if a given location 
+is suitable for a utility-scale solar farm. After carefully collecting and cleaning 
+the data we were able to train models that classify with 95% for the existing solar farms. 
+Another observation from our project is the importance of various geographic and 
+climatic conditions in building a good solar farm. This can help a shareholder to 
+make decisions in case there is a dilemma over building a solar farm based on a 
+couple of contradictory features. Surprisingly, we find that all features contribute 
+equally to a location being fit for a solar farm. 
+
+### Future Iterations:
+There are various ways we can further improve our model. 
+1. Adding Features: There are other features that we would like to include in the model
+   but we were unable to do so for various reasons. We could include commercial aspects
+   such as, land cost, human labor and transportation cost, profit generated, etc into
+   the model. Moreover, we would like to quantify measures like government support,
+   for example, by introducing a metric and checklist for local laws and incentives
+   towards solar energy.
+2. Including more locations: Due to time constraints, we had to restrict our data
+   collection to the state of California. We could further train and test our model on
+   locations outside california. This would increase the accuracy of our models and
+   would provide us with more points to test the efficiency index on.
+
 
