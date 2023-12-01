@@ -33,7 +33,9 @@ amount of solar energy that we can harness at this particular location. The elev
 and slope are indicators of how difficult or easy it would be to build a solar farm. The 
 land cover informs us about potential land use restrictions at this place, example, 
 open water, or dense forest. Finally, the distance to the nearest city serves as a proxy 
-for electricity demand,mlabor and transportation cost in building the solar farm. 
+for electricity demand, labor and transportation cost in building the solar farm. 
+
+For figures on any of our data points, please visit [figures](figures).
 
 <b> Cleaning: </b>
 
@@ -49,13 +51,15 @@ all data along with API calls are present in [data](data).
 
 ## Modelling Overview
 Once we had our data cleaned and preprocessed, we plotted density functions for all our features 
-and then plotted the features against the ac_output variable. We observed that the features are 
+and then plotted the features against the ac_output variable. These graphs are present 
+[here](data_code/data_viz.ipynb). We observed that the features are 
 not Gaussian and don’t show a clear linear or binomial correlation. This helped us eliminate 
-certain models. We searched for models that are suitable for a classification task. 
-We chose <b> Logistic Regression, Decision Trees, Support Vector Machines, XGBoost Classifiers, and 
+certain models. We searched for models that are suitable for a classification task. We chose 
+<b> Logistic Regression, Decision Trees, Support Vector Machines, XGBoost Classifiers, and 
 Deep Learning with classification layers </b>.
 
-Modelling code, detailed metrics, and confusion matrices are present in [ml_code](ml_code).
+Modelling code, detailed metrics, and confusion matrices are present in [ml_code](ml_code). We
+also provide a detailed report [here](ml_code/ML_Model_Report.pdf).
 
 ## Results and Conclusion 
 As stated above, our goal was to create a model that can classify if a given location 
