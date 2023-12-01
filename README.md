@@ -46,7 +46,7 @@ location across California that would serve as examples where solar farms cannot
 collected a data on a feature called "ac_ouput", which is the theoretical maximum amount of 
 solar energy that we can harness at a particular location. 
 
-Our data collection and cleaning code is present in the [new_data](new_data) and 
+Our data collection and cleaning code is present in [new_data](new_data) and 
 [data_code](data_code). Moreover, all data along with API calls are 
 present in [data](data).
 
