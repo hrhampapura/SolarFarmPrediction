@@ -47,7 +47,7 @@ collected a data on a feature called "ac_ouput", which is the theoretical maximu
 solar energy that we can harness at a particular location. 
 
 Our data collection and cleaning code is present in the [new_data](new_data) and 
-[data_code](data_code) folder. Moreover, all data along with API calls are 
+[data_code](data_code). Moreover, all data along with API calls are 
 present in [data](data).
 
 ## Modelling Overview
