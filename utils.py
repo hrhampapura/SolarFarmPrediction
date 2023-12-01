@@ -5,6 +5,7 @@ import json
 import ast
 import geopy.distance
 from data_code.cities_utils import distance_from_cities
+import ee
 #________________________________________________________________________________
 # Distance in miles.Default value = 50 miles 
 # Returns demand in Megawatthours
@@ -52,3 +53,17 @@ def get_distance_from_city(lat,long,population_threhold=None,state='CA'):
     min_distance = sorted(distance_list)[0]
 
     return min_distance
+#_________________________________________________________________________________
+
+ee.Authenticate()
+ee.Initialize()
+dataset = ee.ImageCollection('USGS/NLCD_RELEASES/2019_REL/NLCD')
+
+def land_cover(longitude, latitude):
+
+    point = ee.Geometry.Point(longitude, latitude)
+    nlcd2019 = dataset.filter(ee.Filter.eq('system:index', '2019')).first()
+    landcover = nlcd2019.select('landcover')
+    landcover_value = landcover.sample(point, scale=30).first().get('landcover').getInfo()
+    
+    return landcover_value
