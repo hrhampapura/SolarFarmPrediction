@@ -67,3 +67,45 @@ def land_cover(longitude, latitude):
     landcover_value = landcover.sample(point, scale=30).first().get('landcover').getInfo()
     
     return landcover_value
+
+#_______________________________________________________________________________________
+def get_solar_data(latitude, longitude, radius_for_climate_data=100):
+    # Returns a dataframe with solar data. 
+    # In order to use this function you have to import requests and pandas
+
+    # API Key
+    apikey = 'GNoTfD5IZWwIEz24zB5Wn0aEhDvNJSep5bwapzTI'
+    parameters = {
+        'format': 'json',
+        'system_capacity': 1000, # 1000kW = 1 MW, 1 MW or greater is considered utility-scale
+        'module_type': 0,       # 0- Standard module, 1- Premium, 2-Thin film
+        'losses': 14,           # Losses in percentage
+        'array_type': 0,        # Open Rack: Also known as ground mount.
+        'tilt': 40,
+        'azimuth': 180,         # This means that the solar array is facing South in the Northern Hemisphere
+        'lat': latitude,
+        'lon': longitude,
+        'dataset': 'nsrdb',     # tmy2 is 1960-1990, tmy3 is 1990-2005
+        'radius': radius_for_climate_data, # 0-Pick the station nearest to the given (lat,lon), e.g: 50 - 50 miles
+        'timeframe': 'monthly',
+        'api_key': apikey
+    }
+
+    url = 'https://developer.nrel.gov/api/pvwatts/v8'
+    response = requests.get(url, params=parameters)
+    data = response.json()
+
+    # Check if 'outputs' is in the data
+    if 'outputs' not in data:
+        print(f"No data available for latitude {latitude} and longitude {longitude}")
+        return pd.DataFrame() # Return an empty DataFrame if no data is available
+
+    output_data = data['outputs']
+    input_data  = data['inputs']
+
+    output_data['latitude']  = input_data['lat']
+    output_data['longitude'] = input_data['lon']
+
+    # Convert output_data to a DataFrame
+    df = pd.DataFrame([output_data])
+    return df
