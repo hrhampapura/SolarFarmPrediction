@@ -46,8 +46,8 @@ location across California that would serve as examples where solar farms cannot
 collected a data on a feature called "ac_ouput", which is the theoretical maximum amount of 
 solar energy that we can harness at a particular location. 
 
-Our Data Collection and Cleaning code is present in the [data_code](data_code) folder. Moreover,
-all data along with API calls are present in [data](data).
+Our data collection and cleaning code is present in the [data_code](data_code) folder. Moreover,
+all data along with API calls are present in [new_data](new_data).
 
 ## Modelling Overview
 Once we had our data cleaned and preprocessed, we plotted density functions for all our features 
