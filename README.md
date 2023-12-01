@@ -35,7 +35,7 @@ land cover informs us about potential land use restrictions at this place, examp
 open water, or dense forest. Finally, the distance to the nearest city serves as a proxy 
 for electricity demand, labor and transportation cost in building the solar farm. 
 
-For figures on any of our data points, please visit [figures](figures).
+For plots any of our features on a map please visit [figures](figures).
 
 <b> Cleaning: </b>
 
@@ -46,8 +46,9 @@ location across California that would serve as examples where solar farms cannot
 collected a data on a feature called "ac_ouput", which is the theoretical maximum amount of 
 solar energy that we can harness at a particular location. 
 
-Our data collection and cleaning code is present in the [data_code](data_code) folder. Moreover,
-all data along with API calls are present in [new_data](new_data).
+Our data collection and cleaning code is present in the [new_data](new_data) and 
+[data_code](data_code) folder. Moreover, all data along with API calls are 
+present in [data](data).
 
 ## Modelling Overview
 Once we had our data cleaned and preprocessed, we plotted density functions for all our features 
