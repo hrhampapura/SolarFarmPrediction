@@ -36,12 +36,14 @@ For plots any of our features on a map please visit [figures](figures).
 
 <b> Cleaning: </b>
 
-To train our classifier model, we also need the formation of places where solar farms cannot 
-exist. To this extent, we set thresholds for each feature such that beyond this threshold values, 
+To train our classifier model, we also need information about places where solar farms cannot 
+exist. To this extent, we set thresholds for each feature such that beyond these threshold values, 
 it would not be practical to build a utility-scale solar farm. This helped us identify various 
-location across California that would serve as examples where solar farms cannot exist. We also
-collected a data on a feature called "ac_ouput", which is the theoretical maximum amount of 
-solar energy that we can harness at a particular location. 
+locations across California where solar farms cannot exist. We also
+collected data on a feature called "ac_annual_ouput". The modeled AC output indicates the maximum solar energy harnessable at a given location for a 1MW capacity farm, 
+factoring in typical losses and weather conditions, sourced from the National Renewable Energy Laboratory's solar model. 
+This approach negates the need for separate training on variables like solar irradiance, temperature, and cloud cover. 
+Using the annual average accounts for variations in solar output over shorter periods.
 
 Our data collection and cleaning code is present in [new_data](new_data) and 
 [data_code](data_code). Moreover, all data along with API calls are 
