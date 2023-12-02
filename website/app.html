@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Solar Farm Site Classifier</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+<div class="img"></div>
+
+<form class="form">
+	<h2>Latitude</h2>
+    <input class="area"  type="text" id="uilat" class="floatLabel" name="lat" value="33.8216272755228">
+
+  <h2>Longitude</h2>
+    <input class="area"  type="text" id="uilon" class="floatLabel" name="lon" value="-115.3906513167111">
+	</form>
+
+<form class="form">
+		<h2>Model</h2>
+	<div>
+  <select class="location" name="" id="uimodel">
+    <option value="" disabled="disabled" selected="selected">Choose a Model</option>
+		<option>Logistic_Regression</option>
+        <option>Decision_Tree</option>
+        <option>Support_Vector_Machine</option>
+  </select>
+</div>
+
+	<button class="submit" onclick="onClickedClassify()" type="button">Classify solar farm site</button>
+
+	<div id="uiclassifysite" class="result">	<h2></h2> </div>
+
+</body>
+</html>
+
