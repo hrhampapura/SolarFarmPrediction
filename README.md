@@ -14,8 +14,7 @@ AUTHORS: Utkarsh Agrawal, Mansi Bezbaruah, Harsha Hampapura, Akshay Khadse, Meys
 ## Project Overview
 This project is an innovative solution designed to streamline the site selection process 
 for utility-scale solar energy farms. Leveraging geospatial data analytics and machine 
-learning algorithms, our predictive models assess various factors, including: solar 
-irradiance, topography, land use, and population. Then, we provide a recommendation 
+learning algorithms, our predictive models assess various factors, including: modeled average annual electricity output, topography, land use, and population. Then, we provide a recommendation 
 system for potential solar power farms, on which our stakeholders can conduct a few 
 extra studies before investment and construction. This system significantly reduces 
 time and resources spent on research, and thus, is an indispensable tool for our 
@@ -25,7 +24,7 @@ stakeholders.
 How efficiently does the model predict suitable locations compared to actual installations?
 
 ## Data Gathering and Preprocessing
-Our data consists of 5 features, namely- solar output, land cover data, elevation, slope 
+Our data consists of 5 features, namely- modeled average electricity output, land cover data, elevation, slope 
 and distance to a nearest city. The solar output tells us about the theoretical maximum 
 amount of solar energy that we can harness at this particular location. The elevation 
 and slope are indicators of how difficult or easy it would be to build a solar farm. The 
